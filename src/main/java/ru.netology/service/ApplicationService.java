@@ -28,4 +28,6 @@ public class ApplicationService {
         return applicationRepository.findPersonByNameAndSurname(name, surname);
     }
 
+    public List<Person> getAllPersons() { return applicationRepository.findAll(); }
+
 }

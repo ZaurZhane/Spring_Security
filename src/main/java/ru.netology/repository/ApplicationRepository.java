@@ -22,4 +22,7 @@ public interface ApplicationRepository extends JpaRepository<Person, PersonKey> 
     @Query("SELECT p FROM Person p WHERE p.personKey.name = :name AND p.personKey.surname = :surname")
     Optional<Person> findPersonByNameAndSurname(@Param("name") String name, @Param("surname") String surname);
 
+    @Query("SELECT p FROM Person p ORDER BY p.personKey.age ASC")
+    List<Person> findAll();
+
 }
